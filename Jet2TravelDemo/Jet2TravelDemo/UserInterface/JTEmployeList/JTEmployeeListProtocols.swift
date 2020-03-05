@@ -17,6 +17,7 @@ protocol JTEmployeeListPresenter {
 
 protocol JTEmployeeListInteractor {
     var presenter: JTEmployeeListPresenter {get set}
+    var service: JTEmployeeService {get set}
 }
 
 protocol JTEmployeeListRouter {

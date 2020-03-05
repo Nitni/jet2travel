@@ -14,6 +14,9 @@
 		9A56CB852411619600A1E5CC /* JTEmployeeListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB842411619600A1E5CC /* JTEmployeeListProtocols.swift */; };
 		9A56CB872411625F00A1E5CC /* JTEmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB862411625F00A1E5CC /* JTEmployeeListViewController.swift */; };
 		9A56CB892411626B00A1E5CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A56CB882411626B00A1E5CC /* Main.storyboard */; };
+		9A56CB8B241166D300A1E5CC /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB8A241166D300A1E5CC /* RequestManager.swift */; };
+		9A56CB8D24116CD900A1E5CC /* JTEmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB8C24116CD900A1E5CC /* JTEmployeeService.swift */; };
+		9A56CB9024117CDA00A1E5CC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB8F24117CDA00A1E5CC /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		9A56CB842411619600A1E5CC /* JTEmployeeListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeListProtocols.swift; sourceTree = "<group>"; };
 		9A56CB862411625F00A1E5CC /* JTEmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeListViewController.swift; sourceTree = "<group>"; };
 		9A56CB882411626B00A1E5CC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Jet2TravelDemo/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		9A56CB8A241166D300A1E5CC /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		9A56CB8C24116CD900A1E5CC /* JTEmployeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeService.swift; sourceTree = "<group>"; };
+		9A56CB8F24117CDA00A1E5CC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 				9A56CB7D241160C400A1E5CC /* UserInterface */,
 				9A56CB7E2411612E00A1E5CC /* DomainModels */,
 				9A56CB7F2411612E00A1E5CC /* Service */,
+				9A56CB8E24117CC200A1E5CC /* Util */,
 				9A4CA76324115DDA0018E605 /* Assets.xcassets */,
 				9A4CA76524115DDA0018E605 /* LaunchScreen.storyboard */,
 				9A4CA76824115DDA0018E605 /* Info.plist */,
@@ -119,6 +126,8 @@
 		9A56CB7F2411612E00A1E5CC /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9A56CB8A241166D300A1E5CC /* RequestManager.swift */,
+				9A56CB8C24116CD900A1E5CC /* JTEmployeeService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -137,6 +146,14 @@
 				9A56CB862411625F00A1E5CC /* JTEmployeeListViewController.swift */,
 			);
 			path = JTEmployeList;
+			sourceTree = "<group>";
+		};
+		9A56CB8E24117CC200A1E5CC /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9A56CB8F24117CDA00A1E5CC /* AppConstants.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,8 +259,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A56CB872411625F00A1E5CC /* JTEmployeeListViewController.swift in Sources */,
+				9A56CB9024117CDA00A1E5CC /* AppConstants.swift in Sources */,
 				9A56CB832411617D00A1E5CC /* AppDelegate.swift in Sources */,
 				9A56CB852411619600A1E5CC /* JTEmployeeListProtocols.swift in Sources */,
+				9A56CB8B241166D300A1E5CC /* RequestManager.swift in Sources */,
+				9A56CB8D24116CD900A1E5CC /* JTEmployeeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
