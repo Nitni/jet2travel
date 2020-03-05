@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9A4CA76424115DDA0018E605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4CA76324115DDA0018E605 /* Assets.xcassets */; };
 		9A4CA76724115DDA0018E605 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4CA76524115DDA0018E605 /* LaunchScreen.storyboard */; };
-		9A4CA77224115DDB0018E605 /* Jet2TravelDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4CA77124115DDB0018E605 /* Jet2TravelDemoTests.swift */; };
 		9A56CB832411617D00A1E5CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB822411617D00A1E5CC /* AppDelegate.swift */; };
 		9A56CB852411619600A1E5CC /* JTEmployeeListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB842411619600A1E5CC /* JTEmployeeListProtocols.swift */; };
 		9A56CB872411625F00A1E5CC /* JTEmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB862411625F00A1E5CC /* JTEmployeeListViewController.swift */; };
@@ -17,6 +16,8 @@
 		9A56CB8B241166D300A1E5CC /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB8A241166D300A1E5CC /* RequestManager.swift */; };
 		9A56CB8D24116CD900A1E5CC /* JTEmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB8C24116CD900A1E5CC /* JTEmployeeService.swift */; };
 		9A56CB9024117CDA00A1E5CC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB8F24117CDA00A1E5CC /* AppConstants.swift */; };
+		9A56CB92241186ED00A1E5CC /* JEEmployeeListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB91241186ED00A1E5CC /* JEEmployeeListServiceTests.swift */; };
+		9A56CB94241195CD00A1E5CC /* Employe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB93241195CD00A1E5CC /* Employe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,6 @@
 		9A4CA76624115DDA0018E605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A4CA76824115DDA0018E605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A4CA76D24115DDB0018E605 /* Jet2TravelDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Jet2TravelDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A4CA77124115DDB0018E605 /* Jet2TravelDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jet2TravelDemoTests.swift; sourceTree = "<group>"; };
 		9A4CA77324115DDB0018E605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A56CB822411617D00A1E5CC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A56CB842411619600A1E5CC /* JTEmployeeListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeListProtocols.swift; sourceTree = "<group>"; };
@@ -44,6 +44,8 @@
 		9A56CB8A241166D300A1E5CC /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		9A56CB8C24116CD900A1E5CC /* JTEmployeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeService.swift; sourceTree = "<group>"; };
 		9A56CB8F24117CDA00A1E5CC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		9A56CB91241186ED00A1E5CC /* JEEmployeeListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JEEmployeeListServiceTests.swift; sourceTree = "<group>"; };
+		9A56CB93241195CD00A1E5CC /* Employe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,8 @@
 		9A4CA77024115DDB0018E605 /* Jet2TravelDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				9A4CA77124115DDB0018E605 /* Jet2TravelDemoTests.swift */,
 				9A4CA77324115DDB0018E605 /* Info.plist */,
+				9A56CB91241186ED00A1E5CC /* JEEmployeeListServiceTests.swift */,
 			);
 			path = Jet2TravelDemoTests;
 			sourceTree = "<group>";
@@ -119,6 +121,7 @@
 		9A56CB7E2411612E00A1E5CC /* DomainModels */ = {
 			isa = PBXGroup;
 			children = (
+				9A56CB93241195CD00A1E5CC /* Employe.swift */,
 			);
 			path = DomainModels;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 					};
 					9A4CA76C24115DDB0018E605 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = 9A4CA75624115DD70018E605;
 					};
 				};
@@ -263,6 +267,7 @@
 				9A56CB832411617D00A1E5CC /* AppDelegate.swift in Sources */,
 				9A56CB852411619600A1E5CC /* JTEmployeeListProtocols.swift in Sources */,
 				9A56CB8B241166D300A1E5CC /* RequestManager.swift in Sources */,
+				9A56CB94241195CD00A1E5CC /* Employe.swift in Sources */,
 				9A56CB8D24116CD900A1E5CC /* JTEmployeeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,7 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A4CA77224115DDB0018E605 /* Jet2TravelDemoTests.swift in Sources */,
+				9A56CB92241186ED00A1E5CC /* JEEmployeeListServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +462,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46FLC264QW;
 				INFOPLIST_FILE = Jet2TravelDemoTests/Info.plist;
@@ -468,6 +474,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = conficle.Jet2TravelDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jet2TravelDemo.app/Jet2TravelDemo";
@@ -479,6 +486,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46FLC264QW;
 				INFOPLIST_FILE = Jet2TravelDemoTests/Info.plist;

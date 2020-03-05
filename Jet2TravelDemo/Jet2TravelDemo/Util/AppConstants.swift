@@ -10,10 +10,14 @@ struct Constants {
     struct ErrorMessages {
         static let InvalidUrl = "Invalid url"
         static let NoResponseData = "No response data found"
-        static let InvalidJsonResponse = "Invalid JSON response"
+        static let InvalidJsonResponse = "Invalid JSON response format"
+        static let InvalidResponseDataFormat = "Invalid response data format"
     }
     struct API {
         static let Get = "GET"
         static let Post = "POST"
+        static let BaseEndpoint = "http://dummy.restapiexample.com/api/v1"
+        static let EmployeeListEndpoint = "/employees"
+        static let ResponseDataKey = "data"
     }
 }
