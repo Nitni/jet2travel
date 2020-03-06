@@ -26,4 +26,7 @@ struct Constants {
     struct Storyboard {
         static let Main = "Main"
     }
+    struct Image {
+        static let UserPlaceholder = "iconUser"
+    }
 }

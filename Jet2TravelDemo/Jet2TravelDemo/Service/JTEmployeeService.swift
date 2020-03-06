@@ -51,9 +51,10 @@ class JTEmployeeServiceImplementation: JTEmployeeService {
                 var employees = [Employee]()
                 for employeeObject in responseData {
                     guard let employeeJSONData = try? JSONSerialization.data(withJSONObject: employeeObject, options: []),
-                        let employee = try? JSONDecoder().decode(EmployeeImplementation.self, from: employeeJSONData) else {
+                        var employee = try? JSONDecoder().decode(EmployeeImplementation.self, from: employeeJSONData) else {
                             return
                     }
+                    employee.image = "https://tinyurl.com/vkdd8yw"
                     employees.append(employee)
                 }
                 completionBlock(employees, nil)

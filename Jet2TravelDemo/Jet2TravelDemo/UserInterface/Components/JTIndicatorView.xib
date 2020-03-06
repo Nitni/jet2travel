@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JTIndicatorView" customModule="Jet2TravelDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNE-ND-deq">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vaq-Hx-Oau">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfF-d3-Hjg">
+                    <rect key="frame" x="15" y="471.5" width="384" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="LNE-ND-deq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="5VQ-wr-ofe"/>
+                <constraint firstItem="LNE-ND-deq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IHG-Cl-HNk"/>
+                <constraint firstItem="AfF-d3-Hjg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="dqa-Jx-r3D"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LNE-ND-deq" secondAttribute="trailing" id="mbL-O7-SmF"/>
+                <constraint firstItem="vaq-Hx-Oau" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pzH-1y-qTF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="LNE-ND-deq" secondAttribute="bottom" id="rmI-Lr-qgj"/>
+                <constraint firstItem="AfF-d3-Hjg" firstAttribute="top" secondItem="vaq-Hx-Oau" secondAttribute="bottom" constant="5" id="sOg-Hk-axX"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AfF-d3-Hjg" secondAttribute="trailing" constant="15" id="ysS-qw-wwp"/>
+                <constraint firstItem="vaq-Hx-Oau" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="z6t-M4-tCb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="indicator" destination="vaq-Hx-Oau" id="NWg-31-Rt3"/>
+                <outlet property="messageLabel" destination="AfF-d3-Hjg" id="Kuk-IO-Gur"/>
+            </connections>
+            <point key="canvasLocation" x="141" y="128"/>
+        </view>
+    </objects>
+</document>

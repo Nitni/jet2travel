@@ -33,9 +33,9 @@ class URLSessionMock: URLSession {
             case .NoResponseDataFound:
                 completionHandler(nil, nil, NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.ErrorMessages.NoResponseData]))
             case .InvalidJSONResponse:
-                completionHandler("Non json response".data(using: String.Encoding.utf8), nil, NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.ErrorMessages.NoResponseData]))
+                completionHandler("Non json response".data(using: String.Encoding.utf8), nil, nil)
             case .InvalidResponseDataFormat:
-                completionHandler("{\"status\":\"success\",\"data\":\"\"}".data(using: String.Encoding.utf8), nil, NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.ErrorMessages.NoResponseData]))
+                completionHandler("{\"status\":\"success\",\"data\":\"\"}".data(using: String.Encoding.utf8), nil, nil)
             case .ValidResponse:
                 completionHandler("{\"status\":\"success\",\"data\":[{\"id\":\"1\",\"employee_name\":\"Tiger Nixon\",\"employee_salary\":\"320800\",\"employee_age\":\"61\",\"profile_image\":\"\"}]}".data(using: String.Encoding.utf8), nil, nil)
             case .FailedResponse:

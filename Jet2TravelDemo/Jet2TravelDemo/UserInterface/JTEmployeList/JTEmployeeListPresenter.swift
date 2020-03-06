@@ -18,6 +18,8 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
     var interactor: JTEmployeeListInteractor?
     var router: JTEmployeeListRouter?
     private var pageNumber: Int = 0
+    private var totalRecords: Int = 50
+    private var employees = [Employee]()
     
     func viewDidLoad() {
         self.loadInitialEmployees()
@@ -37,18 +39,21 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
     }
     
     func didFetch(employees: [Employee]) {
+        self.employees.append(contentsOf: employees)
         guard let view = self.view else {return}
+        view.hideIndicator()
+        (self.employees.count < self.totalRecords) ? (view.enableMoreIncomingEmployees()) : (view.disableMoreIncomingEmployees())
         if employees.count == 0 {
-            if self.pageNumber > 0 {
+            if self.pageNumber == 0 {
+                DispatchQueue.main.async {
+                    view.showNoEmployeesFound(message: Messages.NoEmployeesFound)
+                }
+            }else {
                 self.pageNumber -= 1
             }
-            DispatchQueue.main.async {
-                view.showNoEmployeesFound(message: Messages.NoEmployeesFound)
-            }
-            
         }else {
             self.pageNumber == 0 ? DispatchQueue.main.async {
-                view.show(employess: employees)
+                view.show(employees: employees)
             }  : DispatchQueue.main.async {
                 view.showMore(employees: employees)
             }
@@ -60,19 +65,27 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
             self.pageNumber -= 1
         }
         if let view = self.view {
+            view.hideIndicator()
             DispatchQueue.main.async {
                 view.showError(message: error.localizedDescription)
             }
-           
         }
     }
     
     private func loadInitialEmployees(){
-        self.pageNumber = 0
+        self.setup()
         self.fetchEmployees()
     }
     
+    private func setup(){
+        self.pageNumber = 0
+        self.employees.removeAll()
+    }
+    
     private func fetchEmployees(){
+        if let view = self.view {
+            view.showIndicator()
+        }
         if let interactor = self.interactor {
             interactor.fetchEmployees(for: self.pageNumber)
         }

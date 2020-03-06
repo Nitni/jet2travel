@@ -6,3 +6,6 @@
   Copyright © 2020 Nitin Manghwani. All rights reserved.
 */
 "OK" = "OK";
+"NoEmployeesFound" = "No employees found";
+"FetchingEmployees" = "Fetching employees...";
+"LoadMoreRecords" = "Load more records...";

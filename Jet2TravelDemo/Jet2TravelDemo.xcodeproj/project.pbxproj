@@ -24,6 +24,16 @@
 		9A56CB9E24128EE400A1E5CC /* JTEmployeeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB9D24128EE400A1E5CC /* JTEmployeeListRouter.swift */; };
 		9A56CBA02412981B00A1E5CC /* JTAlertUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB9F2412981B00A1E5CC /* JTAlertUtility.swift */; };
 		9A56CBA4241298EB00A1E5CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A56CBA6241298EB00A1E5CC /* Localizable.strings */; };
+		9A56CBA92412ABEF00A1E5CC /* JTIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CBA82412ABEF00A1E5CC /* JTIndicatorView.swift */; };
+		9A56CBAB2412ABFF00A1E5CC /* JTIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A56CBAA2412ABFF00A1E5CC /* JTIndicatorView.xib */; };
+		9A56CBAD2412AD4100A1E5CC /* JTBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CBAC2412AD4100A1E5CC /* JTBaseView.swift */; };
+		9A56CBAF2412C39A00A1E5CC /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CBAE2412C39A00A1E5CC /* AppUtil.swift */; };
+		9A56CBB22412D41800A1E5CC /* JTEmployeeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CBB02412D41800A1E5CC /* JTEmployeeListCell.swift */; };
+		9A56CBB32412D41800A1E5CC /* JTEmployeeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A56CBB12412D41800A1E5CC /* JTEmployeeListCell.xib */; };
+		9A56CBB62412E6E900A1E5CC /* JTLoadMoreEmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CBB42412E6E900A1E5CC /* JTLoadMoreEmployeeCell.swift */; };
+		9A56CBB72412E6E900A1E5CC /* JTLoadMoreEmployeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A56CBB52412E6E900A1E5CC /* JTLoadMoreEmployeeCell.xib */; };
+		9A56CBBA2412F00D00A1E5CC /* JTNoEmployeesFoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CBB82412F00D00A1E5CC /* JTNoEmployeesFoundCell.swift */; };
+		9A56CBBB2412F00D00A1E5CC /* JTNoEmployeesFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A56CBB92412F00D00A1E5CC /* JTNoEmployeesFoundCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +68,16 @@
 		9A56CB9D24128EE400A1E5CC /* JTEmployeeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeListRouter.swift; sourceTree = "<group>"; };
 		9A56CB9F2412981B00A1E5CC /* JTAlertUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTAlertUtility.swift; sourceTree = "<group>"; };
 		9A56CBA5241298EB00A1E5CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9A56CBA82412ABEF00A1E5CC /* JTIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTIndicatorView.swift; sourceTree = "<group>"; };
+		9A56CBAA2412ABFF00A1E5CC /* JTIndicatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JTIndicatorView.xib; sourceTree = "<group>"; };
+		9A56CBAC2412AD4100A1E5CC /* JTBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTBaseView.swift; sourceTree = "<group>"; };
+		9A56CBAE2412C39A00A1E5CC /* AppUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtil.swift; sourceTree = "<group>"; };
+		9A56CBB02412D41800A1E5CC /* JTEmployeeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeListCell.swift; sourceTree = "<group>"; };
+		9A56CBB12412D41800A1E5CC /* JTEmployeeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JTEmployeeListCell.xib; sourceTree = "<group>"; };
+		9A56CBB42412E6E900A1E5CC /* JTLoadMoreEmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTLoadMoreEmployeeCell.swift; sourceTree = "<group>"; };
+		9A56CBB52412E6E900A1E5CC /* JTLoadMoreEmployeeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JTLoadMoreEmployeeCell.xib; sourceTree = "<group>"; };
+		9A56CBB82412F00D00A1E5CC /* JTNoEmployeesFoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTNoEmployeesFoundCell.swift; sourceTree = "<group>"; };
+		9A56CBB92412F00D00A1E5CC /* JTNoEmployeesFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JTNoEmployeesFoundCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +145,7 @@
 			children = (
 				9A56CB822411617D00A1E5CC /* AppDelegate.swift */,
 				9A56CB882411626B00A1E5CC /* Main.storyboard */,
+				9A56CBA72412AB4400A1E5CC /* Components */,
 				9A56CB812411614E00A1E5CC /* JTEmployeList */,
 				9A56CB802411614E00A1E5CC /* JTEmployeeDetails */,
 			);
@@ -164,6 +185,12 @@
 				9A56CB99241273E100A1E5CC /* JTEmployeeListPresenter.swift */,
 				9A56CB9B241286D000A1E5CC /* JTEmployeeListInteractor.swift */,
 				9A56CB9D24128EE400A1E5CC /* JTEmployeeListRouter.swift */,
+				9A56CBB02412D41800A1E5CC /* JTEmployeeListCell.swift */,
+				9A56CBB12412D41800A1E5CC /* JTEmployeeListCell.xib */,
+				9A56CBB42412E6E900A1E5CC /* JTLoadMoreEmployeeCell.swift */,
+				9A56CBB52412E6E900A1E5CC /* JTLoadMoreEmployeeCell.xib */,
+				9A56CBB82412F00D00A1E5CC /* JTNoEmployeesFoundCell.swift */,
+				9A56CBB92412F00D00A1E5CC /* JTNoEmployeesFoundCell.xib */,
 			);
 			path = JTEmployeList;
 			sourceTree = "<group>";
@@ -173,6 +200,7 @@
 			children = (
 				9A56CB8F24117CDA00A1E5CC /* AppConstants.swift */,
 				9A56CB9F2412981B00A1E5CC /* JTAlertUtility.swift */,
+				9A56CBAE2412C39A00A1E5CC /* AppUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -183,6 +211,16 @@
 				9A56CBA6241298EB00A1E5CC /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9A56CBA72412AB4400A1E5CC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9A56CBAC2412AD4100A1E5CC /* JTBaseView.swift */,
+				9A56CBA82412ABEF00A1E5CC /* JTIndicatorView.swift */,
+				9A56CBAA2412ABFF00A1E5CC /* JTIndicatorView.xib */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,9 +307,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A56CB892411626B00A1E5CC /* Main.storyboard in Resources */,
+				9A56CBB72412E6E900A1E5CC /* JTLoadMoreEmployeeCell.xib in Resources */,
 				9A56CBA4241298EB00A1E5CC /* Localizable.strings in Resources */,
 				9A4CA76724115DDA0018E605 /* LaunchScreen.storyboard in Resources */,
+				9A56CBAB2412ABFF00A1E5CC /* JTIndicatorView.xib in Resources */,
+				9A56CBBB2412F00D00A1E5CC /* JTNoEmployeesFoundCell.xib in Resources */,
 				9A4CA76424115DDA0018E605 /* Assets.xcassets in Resources */,
+				9A56CBB32412D41800A1E5CC /* JTEmployeeListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,13 +334,19 @@
 				9A56CB872411625F00A1E5CC /* JTEmployeeListViewController.swift in Sources */,
 				9A56CB9024117CDA00A1E5CC /* AppConstants.swift in Sources */,
 				9A56CB832411617D00A1E5CC /* AppDelegate.swift in Sources */,
+				9A56CBAF2412C39A00A1E5CC /* AppUtil.swift in Sources */,
 				9A56CB982412653400A1E5CC /* JTResponseParser.swift in Sources */,
+				9A56CBBA2412F00D00A1E5CC /* JTNoEmployeesFoundCell.swift in Sources */,
 				9A56CB9C241286D000A1E5CC /* JTEmployeeListInteractor.swift in Sources */,
 				9A56CB852411619600A1E5CC /* JTEmployeeListProtocols.swift in Sources */,
 				9A56CB8B241166D300A1E5CC /* RequestManager.swift in Sources */,
 				9A56CB94241195CD00A1E5CC /* Employe.swift in Sources */,
+				9A56CBB62412E6E900A1E5CC /* JTLoadMoreEmployeeCell.swift in Sources */,
+				9A56CBA92412ABEF00A1E5CC /* JTIndicatorView.swift in Sources */,
+				9A56CBAD2412AD4100A1E5CC /* JTBaseView.swift in Sources */,
 				9A56CB8D24116CD900A1E5CC /* JTEmployeeService.swift in Sources */,
 				9A56CBA02412981B00A1E5CC /* JTAlertUtility.swift in Sources */,
+				9A56CBB22412D41800A1E5CC /* JTEmployeeListCell.swift in Sources */,
 				9A56CB9A241273E100A1E5CC /* JTEmployeeListPresenter.swift in Sources */,
 				9A56CB9E24128EE400A1E5CC /* JTEmployeeListRouter.swift in Sources */,
 			);

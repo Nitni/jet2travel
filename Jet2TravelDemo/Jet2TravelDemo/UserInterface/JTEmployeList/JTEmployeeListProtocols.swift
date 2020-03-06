@@ -11,10 +11,14 @@ import Foundation
 protocol JTEmployeeListView: class {
     var presenter: JTEmployeeListPresenter? {get set}
     
-    func show(employess: [Employee])
+    func show(employees: [Employee])
     func showMore(employees: [Employee])
     func showNoEmployeesFound(message: String)
     func showError(message: String)
+    func enableMoreIncomingEmployees()
+    func disableMoreIncomingEmployees()
+    func showIndicator()
+    func hideIndicator()
 }
 
 protocol JTEmployeeListPresenter: class {
