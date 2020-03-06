@@ -9,6 +9,8 @@
 import UIKit
 
 class JTEmployeeListViewController: UIViewController {
+    
+    var presenter: JTEmployeeListPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,4 +29,26 @@ class JTEmployeeListViewController: UIViewController {
     }
     */
 
+}
+
+extension JTEmployeeListViewController: JTEmployeeListView{
+    
+    
+    func show(employess: [Employee]) {
+        
+    }
+    
+    func showMore(employees: [Employee]) {
+        
+    }
+    
+    func showNoEmployeesFound(message: String) {
+        
+    }
+    
+    func showError(message: String) {
+        
+    }
+    
+    
 }

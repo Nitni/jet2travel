@@ -6,20 +6,37 @@
 //  Copyright © 2020 Nitin Manghwani. All rights reserved.
 //
 
-protocol JTEmployeeListView {
-    var presenter: JTEmployeeListPresenter {get set}
-}
+import Foundation
 
-protocol JTEmployeeListPresenter {
-    var view: JTEmployeeListView {get set}
-    var interactor: JTEmployeeListInteractor {get set}
-}
-
-protocol JTEmployeeListInteractor {
-    var presenter: JTEmployeeListPresenter {get set}
-    var service: JTEmployeeService {get set}
-}
-
-protocol JTEmployeeListRouter {
+protocol JTEmployeeListView: class {
+    var presenter: JTEmployeeListPresenter? {get set}
     
+    func show(employess: [Employee])
+    func showMore(employees: [Employee])
+    func showNoEmployeesFound(message: String)
+    func showError(message: String)
+}
+
+protocol JTEmployeeListPresenter: class {
+    var view: JTEmployeeListView? {get set}
+    var interactor: JTEmployeeListInteractor? {get set}
+    var router: JTEmployeeListRouter? {get set}
+    
+    func viewDidLoad()
+    func recordDidSelected(index: Int)
+    func didFetch(employees: [Employee])
+    func employeesFetcFailed(with error: NSError)
+}
+
+protocol JTEmployeeListInteractor: class {
+    var presenter: JTEmployeeListPresenter? {get set}
+    var service: JTEmployeeService? {get set}
+    
+    func fetchEmployees(for pageNumber: Int)
+}
+
+protocol JTEmployeeListRouter: class {
+    
+    static func createModule() -> JTEmployeeListView?
+    static func show(employeeDetail: Employee)
 }

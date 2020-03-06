@@ -22,4 +22,7 @@ struct Constants {
         static let StatusKey = "status"
         static let ResponseDataKey = "data"
     }
+    struct Storyboard {
+        static let Main = "Main"
+    }
 }

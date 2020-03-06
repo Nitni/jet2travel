@@ -19,6 +19,9 @@
 		9A56CB92241186ED00A1E5CC /* JEEmployeeListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB91241186ED00A1E5CC /* JEEmployeeListServiceTests.swift */; };
 		9A56CB94241195CD00A1E5CC /* Employe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB93241195CD00A1E5CC /* Employe.swift */; };
 		9A56CB982412653400A1E5CC /* JTResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB972412653400A1E5CC /* JTResponseParser.swift */; };
+		9A56CB9A241273E100A1E5CC /* JTEmployeeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB99241273E100A1E5CC /* JTEmployeeListPresenter.swift */; };
+		9A56CB9C241286D000A1E5CC /* JTEmployeeListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB9B241286D000A1E5CC /* JTEmployeeListInteractor.swift */; };
+		9A56CB9E24128EE400A1E5CC /* JTEmployeeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB9D24128EE400A1E5CC /* JTEmployeeListRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		9A56CB91241186ED00A1E5CC /* JEEmployeeListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JEEmployeeListServiceTests.swift; sourceTree = "<group>"; };
 		9A56CB93241195CD00A1E5CC /* Employe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employe.swift; sourceTree = "<group>"; };
 		9A56CB972412653400A1E5CC /* JTResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTResponseParser.swift; sourceTree = "<group>"; };
+		9A56CB99241273E100A1E5CC /* JTEmployeeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeListPresenter.swift; sourceTree = "<group>"; };
+		9A56CB9B241286D000A1E5CC /* JTEmployeeListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeListInteractor.swift; sourceTree = "<group>"; };
+		9A56CB9D24128EE400A1E5CC /* JTEmployeeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeListRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,9 @@
 			children = (
 				9A56CB842411619600A1E5CC /* JTEmployeeListProtocols.swift */,
 				9A56CB862411625F00A1E5CC /* JTEmployeeListViewController.swift */,
+				9A56CB99241273E100A1E5CC /* JTEmployeeListPresenter.swift */,
+				9A56CB9B241286D000A1E5CC /* JTEmployeeListInteractor.swift */,
+				9A56CB9D24128EE400A1E5CC /* JTEmployeeListRouter.swift */,
 			);
 			path = JTEmployeList;
 			sourceTree = "<group>";
@@ -269,10 +278,13 @@
 				9A56CB9024117CDA00A1E5CC /* AppConstants.swift in Sources */,
 				9A56CB832411617D00A1E5CC /* AppDelegate.swift in Sources */,
 				9A56CB982412653400A1E5CC /* JTResponseParser.swift in Sources */,
+				9A56CB9C241286D000A1E5CC /* JTEmployeeListInteractor.swift in Sources */,
 				9A56CB852411619600A1E5CC /* JTEmployeeListProtocols.swift in Sources */,
 				9A56CB8B241166D300A1E5CC /* RequestManager.swift in Sources */,
 				9A56CB94241195CD00A1E5CC /* Employe.swift in Sources */,
 				9A56CB8D24116CD900A1E5CC /* JTEmployeeService.swift in Sources */,
+				9A56CB9A241273E100A1E5CC /* JTEmployeeListPresenter.swift in Sources */,
+				9A56CB9E24128EE400A1E5CC /* JTEmployeeListRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
