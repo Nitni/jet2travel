@@ -12,12 +12,14 @@ struct Constants {
         static let NoResponseData = "No response data found"
         static let InvalidJsonResponse = "Invalid JSON response format"
         static let InvalidResponseDataFormat = "Invalid response data format"
+        static let FailedResponse = "Response failure"
     }
     struct API {
         static let Get = "GET"
         static let Post = "POST"
         static let BaseEndpoint = "http://dummy.restapiexample.com/api/v1"
         static let EmployeeListEndpoint = "/employees"
+        static let StatusKey = "status"
         static let ResponseDataKey = "data"
     }
 }

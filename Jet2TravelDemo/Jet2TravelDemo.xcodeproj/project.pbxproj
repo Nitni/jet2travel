@@ -18,6 +18,7 @@
 		9A56CB9024117CDA00A1E5CC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB8F24117CDA00A1E5CC /* AppConstants.swift */; };
 		9A56CB92241186ED00A1E5CC /* JEEmployeeListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB91241186ED00A1E5CC /* JEEmployeeListServiceTests.swift */; };
 		9A56CB94241195CD00A1E5CC /* Employe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB93241195CD00A1E5CC /* Employe.swift */; };
+		9A56CB982412653400A1E5CC /* JTResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB972412653400A1E5CC /* JTResponseParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		9A56CB8F24117CDA00A1E5CC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		9A56CB91241186ED00A1E5CC /* JEEmployeeListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JEEmployeeListServiceTests.swift; sourceTree = "<group>"; };
 		9A56CB93241195CD00A1E5CC /* Employe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employe.swift; sourceTree = "<group>"; };
+		9A56CB972412653400A1E5CC /* JTResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTResponseParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			children = (
 				9A56CB8A241166D300A1E5CC /* RequestManager.swift */,
 				9A56CB8C24116CD900A1E5CC /* JTEmployeeService.swift */,
+				9A56CB972412653400A1E5CC /* JTResponseParser.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				9A56CB872411625F00A1E5CC /* JTEmployeeListViewController.swift in Sources */,
 				9A56CB9024117CDA00A1E5CC /* AppConstants.swift in Sources */,
 				9A56CB832411617D00A1E5CC /* AppDelegate.swift in Sources */,
+				9A56CB982412653400A1E5CC /* JTResponseParser.swift in Sources */,
 				9A56CB852411619600A1E5CC /* JTEmployeeListProtocols.swift in Sources */,
 				9A56CB8B241166D300A1E5CC /* RequestManager.swift in Sources */,
 				9A56CB94241195CD00A1E5CC /* Employe.swift in Sources */,

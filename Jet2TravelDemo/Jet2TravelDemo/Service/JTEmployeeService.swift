@@ -17,6 +17,7 @@ protocol JTEmployeeService {
 class JTEmployeeServiceImplementation: JTEmployeeService {
     
     private enum ServiceConstants {
+        static let SuccessResponseKey = "success"
         static let EmployeeNameKey = "employee_name"
         static let EmployeeImageKey = "profile_image"
         static let EmployeeSalaryKey = "employee_salary"
@@ -36,24 +37,23 @@ class JTEmployeeServiceImplementation: JTEmployeeService {
                 completionBlock(nil, error)
             } else {
                 guard let response = response,
-                    let responseData = response[Constants.API.ResponseDataKey] as? [[String: Any]] else {
+                    let responseStatus = response[Constants.API.StatusKey] as? String,
+                    responseStatus == ServiceConstants.SuccessResponseKey else {
+                        let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.ErrorMessages.FailedResponse])
+                        completionBlock(nil, error)
+                    return
+                }
+                guard let responseData = response[Constants.API.ResponseDataKey] as? [[String: Any]] else {
                         let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.ErrorMessages.InvalidResponseDataFormat])
                         completionBlock(nil, error)
                     return
                 }
                 var employees = [Employee]()
                 for employeeObject in responseData {
-                    guard let employeeName = employeeObject[ServiceConstants.EmployeeNameKey] as? String,
-                        let employeeImage = employeeObject[ServiceConstants.EmployeeImageKey] as? String,
-                        let employeeAge = employeeObject[ServiceConstants.EmployeeAgeKey] as? String,
-                        let employeeSalary = employeeObject[ServiceConstants.EmployeeSalaryKey] as? String else {
-                        return
+                    guard let employeeJSONData = try? JSONSerialization.data(withJSONObject: employeeObject, options: []),
+                        let employee = try? JSONDecoder().decode(EmployeeImplementation.self, from: employeeJSONData) else {
+                            return
                     }
-                    
-                    let employee = EmployeeImplementation(name: employeeName,
-                                                          image: employeeImage,
-                                                          salary: NSDecimalNumber(string: employeeSalary) as Decimal,
-                                                          age: Int(employeeAge))
                     employees.append(employee)
                 }
                 completionBlock(employees, nil)

@@ -16,35 +16,26 @@ protocol RequestManager {
 
 class RequestManagerImplementation: RequestManager {
     
+    private var urlSession: URLSession
+    private var responseParser: JTResponseParser
+    
+    init(urlSession: URLSession, responseParser: JTResponseParser) {
+        self.urlSession = urlSession
+        self.responseParser = responseParser
+    }
+    
     func get(url: String, responseBlock: @escaping ResponseBlock) {
         guard let url = URL(string: url) else {
-            self.sendError(with: Constants.ErrorMessages.InvalidUrl, responseBlock: responseBlock)
+            let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.ErrorMessages.InvalidUrl])
+            responseBlock(nil, error)
             return
         }
         var request = URLRequest(url: url)
         request.httpMethod = Constants.API.Get
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data else {
-                self.sendError(with: Constants.ErrorMessages.NoResponseData, responseBlock: responseBlock)
-                return
-            }
-            do {
-                guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
-                    self.sendError(with: Constants.ErrorMessages.InvalidJsonResponse, responseBlock: responseBlock)
-                    return
-                }
-                responseBlock(json, nil)
-            } catch _ {
-                self.sendError(with: Constants.ErrorMessages.InvalidJsonResponse, responseBlock: responseBlock)
-                return
-            }
+        let task = self.urlSession.dataTask(with: request) { (data, response, error) in
+            self.responseParser.parse(data: data, response: response, error: error as NSError?, responseBlock: responseBlock)
         }
         task.resume()
-    }
-    
-    private func sendError(with message: String, responseBlock: @escaping ResponseBlock){
-        let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: message])
-        responseBlock(nil, error)
     }
     
 }
