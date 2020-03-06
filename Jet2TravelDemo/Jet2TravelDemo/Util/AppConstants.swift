@@ -7,6 +7,7 @@
 //
 
 struct Constants {
+    static let ApplicationName = "Jet2TravelDemo"
     struct ErrorMessages {
         static let InvalidUrl = "Invalid url"
         static let NoResponseData = "No response data found"

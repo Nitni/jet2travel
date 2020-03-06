@@ -23,9 +23,11 @@ protocol JTEmployeeListPresenter: class {
     var router: JTEmployeeListRouter? {get set}
     
     func viewDidLoad()
+    func refreshEmployeeList()
+    func loadMoreEmployees()
     func recordDidSelected(index: Int)
     func didFetch(employees: [Employee])
-    func employeesFetcFailed(with error: NSError)
+    func employeesFetchFailed(with error: NSError)
 }
 
 protocol JTEmployeeListInteractor: class {

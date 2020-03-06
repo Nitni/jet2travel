@@ -12,7 +12,16 @@ class JTEmployeeListInteractorImplementation: JTEmployeeListInteractor {
     var service: JTEmployeeService?
     
     func fetchEmployees(for pageNumber: Int) {
-        
+        guard let presenter = self.presenter, let service = self.service else {
+            return
+        }
+        service.getEmployees { (employees, error) in
+            if let error = error {
+                presenter.employeesFetchFailed(with: error)
+            }else if let employees = employees {
+                presenter.didFetch(employees: employees)
+            }
+        }
     }
     
 }

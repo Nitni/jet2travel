@@ -15,20 +15,10 @@ class JTEmployeeListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let presenter = self.presenter {
+            presenter.viewDidLoad()
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension JTEmployeeListViewController: JTEmployeeListView{
@@ -47,7 +37,7 @@ extension JTEmployeeListViewController: JTEmployeeListView{
     }
     
     func showError(message: String) {
-        
+        JTAlertUtility.showAlert(with: message, in: self)
     }
     
     

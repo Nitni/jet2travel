@@ -22,6 +22,8 @@
 		9A56CB9A241273E100A1E5CC /* JTEmployeeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB99241273E100A1E5CC /* JTEmployeeListPresenter.swift */; };
 		9A56CB9C241286D000A1E5CC /* JTEmployeeListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB9B241286D000A1E5CC /* JTEmployeeListInteractor.swift */; };
 		9A56CB9E24128EE400A1E5CC /* JTEmployeeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB9D24128EE400A1E5CC /* JTEmployeeListRouter.swift */; };
+		9A56CBA02412981B00A1E5CC /* JTAlertUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CB9F2412981B00A1E5CC /* JTAlertUtility.swift */; };
+		9A56CBA4241298EB00A1E5CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A56CBA6241298EB00A1E5CC /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		9A56CB99241273E100A1E5CC /* JTEmployeeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeListPresenter.swift; sourceTree = "<group>"; };
 		9A56CB9B241286D000A1E5CC /* JTEmployeeListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeListInteractor.swift; sourceTree = "<group>"; };
 		9A56CB9D24128EE400A1E5CC /* JTEmployeeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeListRouter.swift; sourceTree = "<group>"; };
+		9A56CB9F2412981B00A1E5CC /* JTAlertUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTAlertUtility.swift; sourceTree = "<group>"; };
+		9A56CBA5241298EB00A1E5CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				9A4CA75924115DD70018E605 /* Jet2TravelDemo */,
+				9A56CBA1241298CC00A1E5CC /* Resources */,
 				9A4CA77024115DDB0018E605 /* Jet2TravelDemoTests */,
 				9A4CA75824115DD70018E605 /* Products */,
 			);
@@ -167,8 +172,17 @@
 			isa = PBXGroup;
 			children = (
 				9A56CB8F24117CDA00A1E5CC /* AppConstants.swift */,
+				9A56CB9F2412981B00A1E5CC /* JTAlertUtility.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		9A56CBA1241298CC00A1E5CC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9A56CBA6241298EB00A1E5CC /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A56CB892411626B00A1E5CC /* Main.storyboard in Resources */,
+				9A56CBA4241298EB00A1E5CC /* Localizable.strings in Resources */,
 				9A4CA76724115DDA0018E605 /* LaunchScreen.storyboard in Resources */,
 				9A4CA76424115DDA0018E605 /* Assets.xcassets in Resources */,
 			);
@@ -283,6 +298,7 @@
 				9A56CB8B241166D300A1E5CC /* RequestManager.swift in Sources */,
 				9A56CB94241195CD00A1E5CC /* Employe.swift in Sources */,
 				9A56CB8D24116CD900A1E5CC /* JTEmployeeService.swift in Sources */,
+				9A56CBA02412981B00A1E5CC /* JTAlertUtility.swift in Sources */,
 				9A56CB9A241273E100A1E5CC /* JTEmployeeListPresenter.swift in Sources */,
 				9A56CB9E24128EE400A1E5CC /* JTEmployeeListRouter.swift in Sources */,
 			);
@@ -313,6 +329,14 @@
 				9A4CA76624115DDA0018E605 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9A56CBA6241298EB00A1E5CC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A56CBA5241298EB00A1E5CC /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
