@@ -71,6 +71,26 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
         }
     }
     
+    func sortByName() {
+        self.employees.sort { (employee1, employee2) -> Bool in
+            guard let name1 = employee1.name, let name2 = employee2.name else {return false}
+            return name1.compare(name2) == .orderedAscending
+        }
+        if let view = self.view {
+            view.show(employees: self.employees)
+        }
+    }
+    
+    func sortByAge() {
+        self.employees.sort { (employee1, employee2) -> Bool in
+            guard let age1 = employee1.age, let age2 = employee2.age else {return false}
+            return age1 < age2
+        }
+        if let view = self.view {
+            view.show(employees: self.employees)
+        }
+    }
+    
     private func loadInitialEmployees(){
         self.setup()
         self.fetchEmployees()

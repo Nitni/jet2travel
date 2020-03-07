@@ -129,5 +129,116 @@ class JTEmployeeListPresenterTests: XCTestCase {
         XCTAssertEqual(employee2?.age, 23)
         XCTAssertEqual(employee2?.salary, 23423)
     }
+    
+    func testSortByName() {
+        let interactor = JTEmployeeListInteractorMock()
+        let presenter = JTEmployeeListPresenterImplementation()
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        let view = JTEmployeeListViewMock()
+        presenter.view = view
+        presenter.viewDidLoad()
+        
+        XCTAssertNotNil(view.employees)
+        XCTAssertEqual(view.employees?.count, 3)
+        
+        var employees = view.employees
+        var employee1 = employees?.first
+        XCTAssertEqual(employee1?.id, "1")
+        XCTAssertEqual(employee1?.name, "Tiger Nixon")
+        XCTAssertEqual(employee1?.age, 61)
+        XCTAssertEqual(employee1?.salary, 320800)
+        
+        var employee2 = employees?[1]
+        XCTAssertEqual(employee2?.id, "2")
+        XCTAssertEqual(employee2?.name, "Mathew Murdock")
+        XCTAssertEqual(employee2?.age, 34)
+        XCTAssertEqual(employee2?.salary, 123121)
+        
+        var employee3 = employees?[2]
+        XCTAssertEqual(employee3?.id, "3")
+        XCTAssertEqual(employee3?.name, "Dany Rand")
+        XCTAssertEqual(employee3?.age, 23)
+        XCTAssertEqual(employee3?.salary, 23423)
+        
+        //When
+        presenter.sortByName()
+        
+        //Then
+        employees = view.employees
+        employee1 = employees?.first
+        XCTAssertEqual(employee1?.id, "3")
+        XCTAssertEqual(employee1?.name, "Dany Rand")
+        XCTAssertEqual(employee1?.age, 23)
+        XCTAssertEqual(employee1?.salary, 23423)
+        
+        employee2 = employees?[1]
+        XCTAssertEqual(employee2?.id, "2")
+        XCTAssertEqual(employee2?.name, "Mathew Murdock")
+        XCTAssertEqual(employee2?.age, 34)
+        XCTAssertEqual(employee2?.salary, 123121)
+        
+        employee3 = employees?[2]
+        XCTAssertEqual(employee3?.id, "1")
+        XCTAssertEqual(employee3?.name, "Tiger Nixon")
+        XCTAssertEqual(employee3?.age, 61)
+        XCTAssertEqual(employee3?.salary, 320800)
+        
+    }
+    
+    func testSortByAge(){
+        let interactor = JTEmployeeListInteractorMock()
+        let presenter = JTEmployeeListPresenterImplementation()
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        let view = JTEmployeeListViewMock()
+        presenter.view = view
+        presenter.viewDidLoad()
+        
+        XCTAssertNotNil(view.employees)
+        XCTAssertEqual(view.employees?.count, 3)
+        
+        var employees = view.employees
+        var employee1 = employees?.first
+        XCTAssertEqual(employee1?.id, "1")
+        XCTAssertEqual(employee1?.name, "Tiger Nixon")
+        XCTAssertEqual(employee1?.age, 61)
+        XCTAssertEqual(employee1?.salary, 320800)
+        
+        var employee2 = employees?[1]
+        XCTAssertEqual(employee2?.id, "2")
+        XCTAssertEqual(employee2?.name, "Mathew Murdock")
+        XCTAssertEqual(employee2?.age, 34)
+        XCTAssertEqual(employee2?.salary, 123121)
+        
+        var employee3 = employees?[2]
+        XCTAssertEqual(employee3?.id, "3")
+        XCTAssertEqual(employee3?.name, "Dany Rand")
+        XCTAssertEqual(employee3?.age, 23)
+        XCTAssertEqual(employee3?.salary, 23423)
+        
+        //When
+        presenter.sortByAge()
+        
+        //Then
+        employees = view.employees
+        employee1 = employees?.first
+        XCTAssertEqual(employee1?.id, "3")
+        XCTAssertEqual(employee1?.name, "Dany Rand")
+        XCTAssertEqual(employee1?.age, 23)
+        XCTAssertEqual(employee1?.salary, 23423)
+        
+        employee2 = employees?[1]
+        XCTAssertEqual(employee2?.id, "2")
+        XCTAssertEqual(employee2?.name, "Mathew Murdock")
+        XCTAssertEqual(employee2?.age, 34)
+        XCTAssertEqual(employee2?.salary, 123121)
+        
+        employee3 = employees?[2]
+        XCTAssertEqual(employee3?.id, "1")
+        XCTAssertEqual(employee3?.name, "Tiger Nixon")
+        XCTAssertEqual(employee3?.age, 61)
+        XCTAssertEqual(employee3?.salary, 320800)
+    }
 
 }

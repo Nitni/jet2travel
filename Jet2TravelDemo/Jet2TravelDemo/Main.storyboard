@@ -25,12 +25,21 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHF-Tt-g1Z">
+                                        <rect key="frame" x="354" y="7" width="30" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <connections>
+                                            <action selector="sortButtonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="TQE-UX-QCW"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="5Mc-bd-DhZ"/>
                                     <constraint firstItem="kny-G9-bHi" firstAttribute="centerY" secondItem="srw-js-rFY" secondAttribute="centerY" id="Kyv-5C-FAl"/>
+                                    <constraint firstAttribute="trailing" secondItem="oHF-Tt-g1Z" secondAttribute="trailing" constant="30" id="UKs-0E-XsB"/>
                                     <constraint firstItem="kny-G9-bHi" firstAttribute="centerX" secondItem="srw-js-rFY" secondAttribute="centerX" id="XOn-fP-ZmD"/>
+                                    <constraint firstItem="oHF-Tt-g1Z" firstAttribute="centerY" secondItem="srw-js-rFY" secondAttribute="centerY" id="uUr-af-hc5"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b4v-Vu-U4P">
@@ -67,6 +76,7 @@
                     <connections>
                         <outlet property="employeeList" destination="b4v-Vu-U4P" id="0JR-T6-m6f"/>
                         <outlet property="screenTitleLabel" destination="kny-G9-bHi" id="Smu-il-rkA"/>
+                        <outlet property="sortButton" destination="oHF-Tt-g1Z" id="Dso-hY-e5z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

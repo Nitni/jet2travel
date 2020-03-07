@@ -15,11 +15,16 @@ private enum ViewConstants {
     static let FetchingEmployessKey = "FetchingEmployees"
     static let ScreenTitleLocalisedKey = "EmployeeListTitle"
     static let DeleteRecordConfirmationKey = "DeleteRecordConfirmation"
+    static let SortButtonTitleLocalisedKey = "Sort"
+    static let SortOptionTitleLocaliseKey = "SortBy"
+    static let SortByNameLocalisedKey = "SortByName"
+    static let SortByAgeLocalisedKey = "SortByAge"
 }
 
 class JTEmployeeListViewController: UIViewController {
     
     @IBOutlet private weak var screenTitleLabel: UILabel!
+    @IBOutlet private weak var sortButton: UIButton!
     @IBOutlet private weak var employeeList: UITableView!
     private weak var indicator: JTIndicatorView?
     private let refreshControler = UIRefreshControl()
@@ -39,6 +44,7 @@ class JTEmployeeListViewController: UIViewController {
     
     private func setupUI(){
         self.screenTitleLabel.text = NSLocalizedString(ViewConstants.ScreenTitleLocalisedKey, comment: "")
+        self.sortButton.setTitle(NSLocalizedString(ViewConstants.SortButtonTitleLocalisedKey, comment: ""), for: .normal)
         let employeeListCellNib = UINib(nibName: ViewConstants.EmployeeListCellNib, bundle: nil)
         self.employeeList.register(employeeListCellNib, forCellReuseIdentifier: ViewConstants.EmployeeListCellNib)
         let loadMoreCellNib = UINib(nibName: ViewConstants.LoadMoreEmployeesNib, bundle: nil)
@@ -53,6 +59,19 @@ class JTEmployeeListViewController: UIViewController {
         if let presenter = self.presenter {
             presenter.refreshEmployeeList()
         }
+    }
+    
+    @IBAction private func sortButtonClicked(){
+        guard let presenter = self.presenter else {
+            return
+        }
+        let sortByNameAction = JTActionModel(title: NSLocalizedString(ViewConstants.SortByNameLocalisedKey, comment: "")) { () -> Void? in
+            presenter.sortByName()
+        }
+        let sortByAgeAction = JTActionModel(title: NSLocalizedString(ViewConstants.SortByAgeLocalisedKey, comment: "")) { () -> Void? in
+            presenter.sortByAge()
+        }
+        JTAlertUtility.showActiomsheet(with: NSLocalizedString(ViewConstants.SortOptionTitleLocaliseKey, comment: ""), actions: [sortByNameAction, sortByAgeAction], in: self)
     }
 }
 

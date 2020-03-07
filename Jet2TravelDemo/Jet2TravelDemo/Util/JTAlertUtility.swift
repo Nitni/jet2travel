@@ -10,6 +10,11 @@ import UIKit
 
 typealias OKClickHandler = () -> Void
 
+struct JTActionModel {
+    var title: String?
+    var action: () -> Void?
+}
+
 class JTAlertUtility {
     
     private enum AlertConstants {
@@ -36,5 +41,19 @@ class JTAlertUtility {
         let cancelAction = UIAlertAction(title: NSLocalizedString(AlertConstants.LocalizedCancelKey, comment: ""), style: .destructive, handler: nil)
         alertController.addAction(cancelAction)
         controller.present(alertController, animated: true, completion: nil)
+    }
+    
+    static func showActiomsheet(with title: String, actions: [JTActionModel], in controller: UIViewController) {
+        let actionsheetController = UIAlertController(title: title, message: "", preferredStyle: .actionSheet)
+        
+        for action in actions {
+            let alertAction = UIAlertAction(title: action.title, style: .default) { (alertAction) in
+                action.action()
+            }
+            actionsheetController.addAction(alertAction)
+        }
+        let cancelAction = UIAlertAction(title: NSLocalizedString(AlertConstants.LocalizedCancelKey, comment: ""), style: .destructive, handler: nil)
+        actionsheetController.addAction(cancelAction)
+        controller.present(actionsheetController, animated: true, completion: nil)
     }
 }

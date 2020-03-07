@@ -31,6 +31,8 @@ protocol JTEmployeeListPresenter: class {
     func deleteRecordAt(index: Int)
     func didFetch(employees: [Employee])
     func employeesFetchFailed(with error: NSError)
+    func sortByName()
+    func sortByAge()
 }
 
 protocol JTEmployeeListInteractor: class {
