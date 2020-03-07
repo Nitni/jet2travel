@@ -28,6 +28,7 @@ protocol JTEmployeeListPresenter: class {
     func refreshEmployeeList()
     func loadMoreEmployees()
     func recordDidSelected(index: Int)
+    func deleteRecordAt(index: Int)
     func didFetch(employees: [Employee])
     func employeesFetchFailed(with error: NSError)
 }

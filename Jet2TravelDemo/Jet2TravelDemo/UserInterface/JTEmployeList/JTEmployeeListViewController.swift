@@ -14,6 +14,7 @@ private enum ViewConstants {
     static let NoEmployeesFoundCellNib = "JTNoEmployeesFoundCell"
     static let FetchingEmployessKey = "FetchingEmployees"
     static let ScreenTitleLocalisedKey = "EmployeeListTitle"
+    static let DeleteRecordConfirmationKey = "DeleteRecordConfirmation"
 }
 
 class JTEmployeeListViewController: UIViewController {
@@ -67,13 +68,16 @@ extension JTEmployeeListViewController: JTEmployeeListView{
     }
     
     func showNoEmployeesFound(message: String) {
-        self.refreshControler.endRefreshing()
-        self.employeeList.reloadData()
+        DispatchQueue.main.async {
+            self.refreshControler.endRefreshing()
+            self.employeeList.reloadData()
+        }
+
     }
     
     func showError(message: String) {
         self.refreshControler.endRefreshing()
-        JTAlertUtility.showAlert(with: message, in: self)
+        JTAlertUtility.showSingleActionAlert(with: message, in: self)
     }
     
     func enableMoreIncomingEmployees() {
@@ -136,7 +140,11 @@ extension JTEmployeeListViewController: UITableViewDataSource {
             }
             cell.setupUI(with: employees[indexPath.row])
             cell.deletionBlock = { employee in
-                JTAlertUtility.showAlert(with: "Are you sure you want to delete this record?", in: self)
+                JTAlertUtility.showDoubleActionAlert(with: ViewConstants.DeleteRecordConfirmationKey, okClickHandler: { [weak self] in
+                    if let weakSelf = self, let presenter = weakSelf.presenter {
+                        presenter.deleteRecordAt(index: indexPath.row)
+                    }
+                }, in: self)
             }
             cell.selectionStyle = .none
             return cell

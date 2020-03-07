@@ -6,8 +6,11 @@
   Copyright © 2020 Nitin Manghwani. All rights reserved.
 */
 "OK" = "OK";
+"Cancel" = "Cancel";
+"Delete" = "Delete";
 "EmployeeListTitle" = "Employee List";
 "NoEmployeesFound" = "No employees found";
 "FetchingEmployees" = "Fetching employees...";
 "LoadMoreRecords" = "Load more records...";
+"DeleteRecordConfirmation" = "Are you sure you want to delete this record?";
 "EmployeeDetailsTitle" = "Employee details";

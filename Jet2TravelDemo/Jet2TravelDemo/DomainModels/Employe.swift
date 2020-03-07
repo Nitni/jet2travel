@@ -9,6 +9,7 @@
 import Foundation
 
 protocol Employee: Decodable {
+    var id: String? {get set}
     var name: String? {get set}
     var image: String? {get set}
     var salary: Decimal? {get set}
@@ -17,12 +18,14 @@ protocol Employee: Decodable {
 
 struct EmployeeImplementation: Employee {
     
+    var id: String?
     var name: String?
     var image: String?
     var salary: Decimal?
     var age: Int?
     
     private enum CondingKeys: String, CodingKey {
+        case id
         case name = "employee_name"
         case image = "profile_image"
         case salary = "employee_salary"
@@ -31,6 +34,7 @@ struct EmployeeImplementation: Employee {
     
     init(from decoder:  Decoder) throws {
         let container = try decoder.container(keyedBy: CondingKeys.self)
+        self.id = try container.decode(String.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
         let age = try container.decode(String.self, forKey: .age)
         self.age = Int(age)

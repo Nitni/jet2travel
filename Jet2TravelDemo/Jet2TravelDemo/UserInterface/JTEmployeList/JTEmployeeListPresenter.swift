@@ -37,6 +37,12 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
         JTEmployeeListRouterImplementation.show(employeeDetail: self.employees[index])
     }
     
+    func deleteRecordAt(index: Int) {
+        self.employees.remove(at: index)
+        guard let view = self.view else {return}
+        view.show(employees: self.employees)
+    }
+    
     func didFetch(employees: [Employee]) {
         self.employees.append(contentsOf: employees)
         guard let view = self.view else {return}
@@ -44,16 +50,12 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
         (self.employees.count < self.totalRecords) ? (view.enableMoreIncomingEmployees()) : (view.disableMoreIncomingEmployees())
         if employees.count == 0 {
             if self.pageNumber == 0 {
-                DispatchQueue.main.async {
-                    view.showNoEmployeesFound(message: Messages.NoEmployeesFound)
-                }
+                view.showNoEmployeesFound(message: Messages.NoEmployeesFound)
             }else {
                 self.pageNumber -= 1
             }
         }else {
-            DispatchQueue.main.async {
-                view.show(employees: self.employees)
-            }
+            view.show(employees: self.employees)
         }
     }
     

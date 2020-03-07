@@ -112,6 +112,11 @@ class JEEmployeeListServiceTests: XCTestCase {
         service.getEmployees { (employees, error) in
             XCTAssertNil(error)
             XCTAssertEqual(employees?.count, 1)
+            let employee = employees?.first
+            XCTAssertEqual(employee?.id, "1")
+            XCTAssertEqual(employee?.name, "Tiger Nixon")
+            XCTAssertEqual(employee?.age, 61)
+            XCTAssertEqual(employee?.salary, 320800)
         }
     }
 }

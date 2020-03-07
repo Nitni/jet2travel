@@ -39,6 +39,7 @@
 		9A56CBC82413AFFD00A1E5CC /* JTEmployeeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CBC72413AFFD00A1E5CC /* JTEmployeeDetailsPresenter.swift */; };
 		9A56CBCA2413B0BB00A1E5CC /* JTEmployeeDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CBC92413B0BB00A1E5CC /* JTEmployeeDetailsRouter.swift */; };
 		9A56CBCC2413B62900A1E5CC /* UIImageView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CBCB2413B62900A1E5CC /* UIImageView+Additions.swift */; };
+		9A56CBD02413C5F800A1E5CC /* JTEmployeeListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A56CBCF2413C5F800A1E5CC /* JTEmployeeListPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		9A56CBC72413AFFD00A1E5CC /* JTEmployeeDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeDetailsPresenter.swift; sourceTree = "<group>"; };
 		9A56CBC92413B0BB00A1E5CC /* JTEmployeeDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeDetailsRouter.swift; sourceTree = "<group>"; };
 		9A56CBCB2413B62900A1E5CC /* UIImageView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Additions.swift"; sourceTree = "<group>"; };
+		9A56CBCF2413C5F800A1E5CC /* JTEmployeeListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTEmployeeListPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				9A4CA77324115DDB0018E605 /* Info.plist */,
 				9A56CB91241186ED00A1E5CC /* JEEmployeeListServiceTests.swift */,
+				9A56CBCF2413C5F800A1E5CC /* JTEmployeeListPresenterTests.swift */,
 			);
 			path = Jet2TravelDemoTests;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A56CBD02413C5F800A1E5CC /* JTEmployeeListPresenterTests.swift in Sources */,
 				9A56CB92241186ED00A1E5CC /* JEEmployeeListServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
