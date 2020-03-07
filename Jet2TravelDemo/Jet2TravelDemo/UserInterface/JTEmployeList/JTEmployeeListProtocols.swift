@@ -12,7 +12,6 @@ protocol JTEmployeeListView: class {
     var presenter: JTEmployeeListPresenter? {get set}
     
     func show(employees: [Employee])
-    func showMore(employees: [Employee])
     func showNoEmployeesFound(message: String)
     func showError(message: String)
     func enableMoreIncomingEmployees()

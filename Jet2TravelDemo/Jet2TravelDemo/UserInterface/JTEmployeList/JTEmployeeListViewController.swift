@@ -63,13 +63,6 @@ extension JTEmployeeListViewController: JTEmployeeListView{
         }
     }
     
-    func showMore(employees: [Employee]) {
-        self.employees?.append(contentsOf: employees)
-        DispatchQueue.main.async {
-            self.employeeList.reloadData()
-        }
-    }
-    
     func showNoEmployeesFound(message: String) {
         self.refreshControler.endRefreshing()
         self.employeeList.reloadData()

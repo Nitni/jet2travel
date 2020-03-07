@@ -52,10 +52,8 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
                 self.pageNumber -= 1
             }
         }else {
-            self.pageNumber == 0 ? DispatchQueue.main.async {
-                view.show(employees: employees)
-            }  : DispatchQueue.main.async {
-                view.showMore(employees: employees)
+            DispatchQueue.main.async {
+                view.show(employees: self.employees)
             }
         }
     }
