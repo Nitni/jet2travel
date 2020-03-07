@@ -8,35 +8,34 @@
 
 import UIKit
 
+typealias DeletionBlock = (Employee) -> Void
+
 class JTEmployeeListCell: UITableViewCell {
     
     @IBOutlet private weak var employeeProfileImageView: UIImageView!
     @IBOutlet private weak var employeeNameLabel: UILabel!
+    private var employee: Employee?
+    var deletionBlock: DeletionBlock?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.employeeProfileImageView.layer.cornerRadius = self.employeeProfileImageView.frame.size.width/2
+        self.employeeProfileImageView.circularBlackBorder()
     }
 
     func setupUI(with employee: Employee){
-        
+        self.employee = employee
         self.employeeNameLabel.text = employee.name ?? ""
         if let profileImageURL = employee.image, !profileImageURL.isEmpty {
-            let requestManager = RequestManagerImplementation(urlSession: URLSession.shared, responseParser: JTResponseParserImplementation())
-            requestManager.downloadImage(with: profileImageURL) { [weak self] (data, response, error)  in
-                DispatchQueue.main.async {
-                    if let weakSelf = self {
-                        if let data = data {
-                            weakSelf.employeeProfileImageView.image = UIImage(data: data)
-                        }else{
-                            weakSelf.employeeProfileImageView.image = UIImage(named: Constants.Image.UserPlaceholder)
-                        }
-                    }
-                }
-            }
+            self.employeeProfileImageView.downloadImage(with: profileImageURL)
         }else{
             self.employeeProfileImageView.image = UIImage(named: Constants.Image.UserPlaceholder)
+        }
+    }
+    
+    @IBAction private func delete(){
+        if let deletionBlock = self.deletionBlock, let employee = self.employee {
+            deletionBlock(employee)
         }
     }
     

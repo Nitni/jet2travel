@@ -13,10 +13,12 @@ private enum ViewConstants {
     static let LoadMoreEmployeesNib = "JTLoadMoreEmployeeCell"
     static let NoEmployeesFoundCellNib = "JTNoEmployeesFoundCell"
     static let FetchingEmployessKey = "FetchingEmployees"
+    static let ScreenTitleLocalisedKey = "EmployeeListTitle"
 }
 
 class JTEmployeeListViewController: UIViewController {
     
+    @IBOutlet private weak var screenTitleLabel: UILabel!
     @IBOutlet private weak var employeeList: UITableView!
     private weak var indicator: JTIndicatorView?
     private let refreshControler = UIRefreshControl()
@@ -35,6 +37,7 @@ class JTEmployeeListViewController: UIViewController {
     }
     
     private func setupUI(){
+        self.screenTitleLabel.text = NSLocalizedString(ViewConstants.ScreenTitleLocalisedKey, comment: "")
         let employeeListCellNib = UINib(nibName: ViewConstants.EmployeeListCellNib, bundle: nil)
         self.employeeList.register(employeeListCellNib, forCellReuseIdentifier: ViewConstants.EmployeeListCellNib)
         let loadMoreCellNib = UINib(nibName: ViewConstants.LoadMoreEmployeesNib, bundle: nil)
@@ -98,7 +101,9 @@ extension JTEmployeeListViewController: JTEmployeeListView{
 
 extension JTEmployeeListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let presenter = self.presenter {
+            presenter.recordDidSelected(index: indexPath.row)
+        }
     }
 }
 
@@ -130,6 +135,10 @@ extension JTEmployeeListViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.setupUI(with: employees[indexPath.row])
+            cell.deletionBlock = { employee in
+                JTAlertUtility.showAlert(with: "Are you sure you want to delete this record?", in: self)
+            }
+            cell.selectionStyle = .none
             return cell
         }
     }

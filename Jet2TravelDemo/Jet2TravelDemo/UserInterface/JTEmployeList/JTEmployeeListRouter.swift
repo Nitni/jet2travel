@@ -12,6 +12,7 @@ class JTEmployeeListRouterImplementation: JTEmployeeListRouter {
     
     private enum RouterConstants {
         static let EmployeeListControllerIdentifier = "JTEmployeeListViewController"
+        static let EmployeeDetailsControllerIdentifier = "JTEmployeeDetailsViewController"
     }
     
     static func createModule() -> JTEmployeeListView? {
@@ -31,6 +32,15 @@ class JTEmployeeListRouterImplementation: JTEmployeeListRouter {
     
     static func show(employeeDetail: Employee) {
         
+        if  let employeeDetailsController = UIStoryboard(name: Constants.Storyboard.Main, bundle: nil).instantiateViewController(withIdentifier: RouterConstants.EmployeeDetailsControllerIdentifier) as? JTEmployeeDetailsViewController,
+            let navigationController = AppDelegate.shared().navigationController?.topViewController?.navigationController {
+            
+            let presenter = JTEmployeeDetailsPresenterImplementation()
+            presenter.employee = employeeDetail
+            presenter.view = employeeDetailsController
+            employeeDetailsController.presenter = presenter
+            navigationController.pushViewController(employeeDetailsController, animated: true)
+        }
     }
     
     

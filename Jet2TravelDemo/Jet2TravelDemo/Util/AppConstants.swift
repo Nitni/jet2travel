@@ -28,5 +28,7 @@ struct Constants {
     }
     struct Image {
         static let UserPlaceholder = "iconUser"
+        static let RightArrow = "iconRightArrow"
+        static let LeftArrow = "iconLeftArrow"
     }
 }

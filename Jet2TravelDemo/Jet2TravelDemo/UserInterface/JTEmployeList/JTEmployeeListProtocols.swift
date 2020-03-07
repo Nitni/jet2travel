@@ -6,7 +6,7 @@
 //  Copyright © 2020 Nitin Manghwani. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol JTEmployeeListView: class {
     var presenter: JTEmployeeListPresenter? {get set}
@@ -23,7 +23,6 @@ protocol JTEmployeeListView: class {
 protocol JTEmployeeListPresenter: class {
     var view: JTEmployeeListView? {get set}
     var interactor: JTEmployeeListInteractor? {get set}
-    var router: JTEmployeeListRouter? {get set}
     
     func viewDidLoad()
     func refreshEmployeeList()

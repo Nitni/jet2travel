@@ -16,7 +16,6 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
     
     weak var view: JTEmployeeListView?
     var interactor: JTEmployeeListInteractor?
-    var router: JTEmployeeListRouter?
     private var pageNumber: Int = 0
     private var totalRecords: Int = 50
     private var employees = [Employee]()
@@ -35,7 +34,7 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
     }
     
     func recordDidSelected(index: Int) {
-        
+        JTEmployeeListRouterImplementation.show(employeeDetail: self.employees[index])
     }
     
     func didFetch(employees: [Employee]) {
