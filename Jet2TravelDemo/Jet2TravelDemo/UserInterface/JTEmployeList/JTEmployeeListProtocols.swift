@@ -18,6 +18,7 @@ protocol JTEmployeeListView: class {
     func disableMoreIncomingEmployees()
     func showIndicator()
     func hideIndicator()
+    func sorting(enabled: Bool)
 }
 
 protocol JTEmployeeListPresenter: class {

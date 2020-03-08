@@ -17,7 +17,7 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
     weak var view: JTEmployeeListView?
     var interactor: JTEmployeeListInteractor?
     private var pageNumber: Int = 0
-    private var totalRecords: Int = 50
+    private var totalRecords: Int = 0
     private var employees = [Employee]()
     
     func viewDidLoad() {
@@ -44,10 +44,8 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
     }
     
     func didFetch(employees: [Employee]) {
-        self.employees.append(contentsOf: employees)
         guard let view = self.view else {return}
         view.hideIndicator()
-        (self.employees.count < self.totalRecords) ? (view.enableMoreIncomingEmployees()) : (view.disableMoreIncomingEmployees())
         if employees.count == 0 {
             if self.pageNumber == 0 {
                 view.showNoEmployeesFound(message: Messages.NoEmployeesFound)
@@ -55,7 +53,10 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
                 self.pageNumber -= 1
             }
         }else {
+            self.employees.append(contentsOf: employees)
+            (self.employees.count < self.totalRecords) ? (view.enableMoreIncomingEmployees()) : (view.disableMoreIncomingEmployees())
             view.show(employees: self.employees)
+            view.sorting(enabled: self.employees.count > 0)
         }
     }
     
@@ -65,9 +66,8 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
         }
         if let view = self.view {
             view.hideIndicator()
-            DispatchQueue.main.async {
-                view.showError(message: error.localizedDescription)
-            }
+            view.showError(message: error.localizedDescription)
+            view.sorting(enabled: self.employees.count > 0)
         }
     }
     

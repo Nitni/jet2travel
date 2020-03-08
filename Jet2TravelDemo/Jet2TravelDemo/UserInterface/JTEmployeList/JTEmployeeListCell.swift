@@ -25,7 +25,16 @@ class JTEmployeeListCell: UITableViewCell {
 
     func setupUI(with employee: Employee){
         self.employee = employee
-        self.employeeNameLabel.text = employee.name ?? ""
+        var nameAge = ""
+        if let age = employee.age, age != 0,
+            let name = employee.name, !name.isEmpty {
+            nameAge = name + ", " + String(age)
+        } else if let name = employee.name, !name.isEmpty {
+            nameAge = name
+        } else if let age = employee.age, age != 0 {
+            nameAge = String(age)
+        }
+        self.employeeNameLabel.text = nameAge
         if let profileImageURL = employee.image, !profileImageURL.isEmpty {
             self.employeeProfileImageView.downloadImage(with: profileImageURL)
         }else{

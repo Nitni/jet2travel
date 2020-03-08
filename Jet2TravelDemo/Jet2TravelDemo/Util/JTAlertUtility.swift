@@ -15,12 +15,36 @@ struct JTActionModel {
     var action: () -> Void?
 }
 
+enum AlertType {
+    case single
+    case double
+}
+
 class JTAlertUtility {
     
     private enum AlertConstants {
         static let LocalizedOKKey = "OK"
         static let LocalizedDeleteKey = "Delete"
         static let LocalizedCancelKey = "Cancel"
+    }
+    
+    static func showAlert(with message: String,
+                          delay: DispatchTime,
+                          type: AlertType,
+                          okClickHandler: OKClickHandler?,
+                          in controller: UIViewController){
+        switch type {
+        case .single:
+            DispatchQueue.main.asyncAfter(deadline: delay) {
+                self.showSingleActionAlert(with: message, in: controller)
+            }
+        case .double:
+            if let okClickHandler = okClickHandler {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    self.showDoubleActionAlert(with: message, okClickHandler: okClickHandler, in: controller)
+                }
+            }
+        }
     }
     
     static func showSingleActionAlert(with message: String, in controller: UIViewController) {

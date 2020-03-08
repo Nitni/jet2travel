@@ -95,8 +95,11 @@ extension JTEmployeeListViewController: JTEmployeeListView{
     }
     
     func showError(message: String) {
-        self.refreshControler.endRefreshing()
-        JTAlertUtility.showSingleActionAlert(with: message, in: self)
+        DispatchQueue.main.async {
+            self.refreshControler.endRefreshing()
+            JTAlertUtility.showAlert(with: message, delay: .now() + 0.3, type: .single, okClickHandler: nil, in: self)
+        }
+        
     }
     
     func enableMoreIncomingEmployees() {
@@ -119,6 +122,13 @@ extension JTEmployeeListViewController: JTEmployeeListView{
                 indicator.hideIndicator()
             }
         }
+    }
+    
+    func sorting(enabled: Bool) {
+        DispatchQueue.main.async {
+            self.sortButton.isEnabled = enabled
+        }
+        
     }
 }
 
