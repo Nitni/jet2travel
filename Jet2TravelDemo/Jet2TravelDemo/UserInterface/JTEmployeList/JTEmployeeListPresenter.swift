@@ -10,15 +10,23 @@ import Foundation
 
 class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
     
+    // MARK: - Constants
     private enum Messages {
         static let NoEmployeesFound = "No employees found"
     }
     
+    // MARK: - Variables
     weak var view: JTEmployeeListView?
     var interactor: JTEmployeeListInteractor?
+    
+    /// Page number indicating the page for which list of employees should be found. This variable is to be used by API and  useful only if pagination is supported by API.
     private var pageNumber: Int = 0
+    
+    /// Total number of records present per system. This variable is used to implementat pagination on application side. Is useful only if pagination is supported by API.
     private var totalRecords: Int = 0
     private var employees = [Employee]()
+    
+    // MARK: - Public methods
     
     func viewDidLoad() {
         self.loadInitialEmployees()
@@ -46,6 +54,8 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
     func didFetch(employees: [Employee]) {
         guard let view = self.view else {return}
         view.hideIndicator()
+        
+        // If zero employees are fetched and if the request is for first page than show no employees found message as there are not any employess present in system
         if employees.count == 0 {
             if self.pageNumber == 0 {
                 view.showNoEmployeesFound(message: Messages.NoEmployeesFound)
@@ -90,6 +100,8 @@ class JTEmployeeListPresenterImplementation: JTEmployeeListPresenter {
             view.show(employees: self.employees)
         }
     }
+    
+    // MARK: - Private methods
     
     private func loadInitialEmployees(){
         self.setup()

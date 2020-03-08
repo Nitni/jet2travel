@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Interface for employe data model.
 protocol Employee: Decodable {
     var id: String? {get set}
     var name: String? {get set}
@@ -16,8 +17,10 @@ protocol Employee: Decodable {
     var age: Int? {get set}
 }
 
+/// Employee data model implementation
 struct EmployeeImplementation: Employee {
     
+    // MARK: - Variables
     var id: String?
     var name: String?
     var image: String?
@@ -32,6 +35,7 @@ struct EmployeeImplementation: Employee {
         case age = "employee_age"
     }
     
+    // MARK: - Designated initialiser
     init(from decoder:  Decoder) throws {
         let container = try decoder.container(keyedBy: CondingKeys.self)
         self.id = try container.decode(String.self, forKey: .id)

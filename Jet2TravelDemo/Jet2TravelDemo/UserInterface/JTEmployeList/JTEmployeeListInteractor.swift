@@ -7,9 +7,12 @@
 //
 
 class JTEmployeeListInteractorImplementation: JTEmployeeListInteractor {
-    weak var presenter: JTEmployeeListPresenter?
     
+    // MARK: - Variables
+    weak var presenter: JTEmployeeListPresenter?
     var service: JTEmployeeService?
+    
+    // MARK: - Public methods
     
     func fetchEmployees(for pageNumber: Int) {
         guard let presenter = self.presenter, let service = self.service else {

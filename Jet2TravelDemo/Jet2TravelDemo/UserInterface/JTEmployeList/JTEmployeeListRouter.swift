@@ -10,11 +10,13 @@ import UIKit
 
 class JTEmployeeListRouterImplementation: JTEmployeeListRouter {
     
+    // MARK: - Constants
     private enum RouterConstants {
         static let EmployeeListControllerIdentifier = "JTEmployeeListViewController"
         static let EmployeeDetailsControllerIdentifier = "JTEmployeeDetailsViewController"
     }
     
+    // MARK: - Public methods
     static func createModule() -> JTEmployeeListView? {
         if  let employeeListController = UIStoryboard(name: Constants.Storyboard.Main, bundle: nil).instantiateViewController(withIdentifier: RouterConstants.EmployeeListControllerIdentifier) as? JTEmployeeListViewController {
             let presenter = JTEmployeeListPresenterImplementation()
@@ -34,7 +36,6 @@ class JTEmployeeListRouterImplementation: JTEmployeeListRouter {
         
         if  let employeeDetailsController = UIStoryboard(name: Constants.Storyboard.Main, bundle: nil).instantiateViewController(withIdentifier: RouterConstants.EmployeeDetailsControllerIdentifier) as? JTEmployeeDetailsViewController,
             let navigationController = AppDelegate.shared().navigationController?.topViewController?.navigationController {
-            
             let presenter = JTEmployeeDetailsPresenterImplementation()
             presenter.employee = employeeDetail
             presenter.view = employeeDetailsController

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Constants used in this source file
 private enum ViewConstants {
     static let EmployeeListCellNib = "JTEmployeeListCell"
     static let LoadMoreEmployeesNib = "JTLoadMoreEmployeeCell"
@@ -16,15 +17,19 @@ private enum ViewConstants {
     static let ScreenTitleLocalisedKey = "EmployeeDetailsTitle"
 }
 
+/// View controller class for employee details page
 class JTEmployeeDetailsViewController: UIViewController {
     
-    var presenter: JTEmployeeDetailsPresenter?
-    
+    // MARK: - Outlets
     @IBOutlet private weak var screenTitleLabel: UILabel!
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var nameAgeLabel: UILabel!
     @IBOutlet private weak var salaryLabel: UILabel!
-
+    
+    // MARK: - Variables
+    var presenter: JTEmployeeDetailsPresenter?
+    
+    // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         if let presenter = self.presenter {
@@ -33,6 +38,7 @@ class JTEmployeeDetailsViewController: UIViewController {
         self.setupUI()
     }
     
+    // MARK: - Private methods
     private func setupUI(){
         self.screenTitleLabel.text = NSLocalizedString(ViewConstants.ScreenTitleLocalisedKey, comment: "")
         self.profileImageView.circularBlackBorder()
@@ -45,8 +51,8 @@ class JTEmployeeDetailsViewController: UIViewController {
     }
 }
 
+/// View implementation for employee details page
 extension JTEmployeeDetailsViewController: JTEmployeeDetailsView {
-    
     
     func show(profileImage: String){
         self.profileImageView.downloadImage(with: profileImage)

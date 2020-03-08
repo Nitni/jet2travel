@@ -9,13 +9,25 @@ import Foundation
 
 typealias EmployeeListCompletion = ([Employee]?, NSError?) -> Void
 
+/// Implementation for all the services and use case related to employee domain model. For e.g get list of employess, update and employee record, sort and search employee records etc.
 protocol JTEmployeeService {
+    
+    // MARK: - Variables
     var requestManager: RequestManager {get set}
+    
+    // MARK: - Methods
+    
+    /**
+     Service implementation to fetch list of employees.
+     
+     - Parameter completionBlock: Function block used to send service response back to calling client class instance/method.
+     */
     func getEmployees(with completionBlock: @escaping EmployeeListCompletion)
 }
 
 class JTEmployeeServiceImplementation: JTEmployeeService {
     
+    // MARK: - Constants
     private enum ServiceConstants {
         static let SuccessResponseKey = "success"
         static let EmployeeNameKey = "employee_name"
@@ -24,8 +36,15 @@ class JTEmployeeServiceImplementation: JTEmployeeService {
         static let EmployeeAgeKey = "employee_age"
     }
     
+    // MARK: - Variables
     var requestManager: RequestManager
     
+    // MARK: - Public methods
+    
+    /**
+     Designated initialiser.
+    - Parameter requestManager: Request manager instance used to call the API.
+     */
     init(requestManager: RequestManager) {
         self.requestManager = requestManager
     }

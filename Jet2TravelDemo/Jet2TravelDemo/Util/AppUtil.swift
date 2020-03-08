@@ -8,7 +8,18 @@
 
 import UIKit
 
+/// Utility class containng helper methods to be used by various classes across the application modules.
 class AppUtil {
+    
+    // MARK: - Public methods
+    
+    /**
+    Set fit constraints for sub view respective to super view.
+     
+     - Parameters:
+        - subView: Subview instance
+        - superView: Super view instance
+     */
     static func setFitConstraints(for subView: UIView, with superView:UIView){
         superView.addSubview(subView)
         subView.translatesAutoresizingMaskIntoConstraints = false

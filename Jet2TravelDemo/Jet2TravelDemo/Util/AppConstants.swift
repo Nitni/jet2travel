@@ -6,6 +6,7 @@
 //  Copyright © 2020 Nitin Manghwani. All rights reserved.
 //
 
+/// Structure wrapping up constants that will be used across the  application.
 struct Constants {
     static let ApplicationName = "Jet2TravelDemo"
     struct ErrorMessages {

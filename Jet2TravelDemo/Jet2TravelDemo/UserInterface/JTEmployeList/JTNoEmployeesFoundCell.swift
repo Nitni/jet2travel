@@ -8,10 +8,13 @@
 
 import UIKit
 
+/// Custom UITableViewCell class to show no employees found message in case there are no employees.
 class JTNoEmployeesFoundCell: UITableViewCell {
 
+    // MARK: - Outlets
     @IBOutlet private weak var messageLabel: UILabel!
 
+    // MARK: - Lifecycle methods
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

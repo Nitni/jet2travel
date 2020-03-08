@@ -8,10 +8,14 @@
 
 import UIKit
 
+/// Custom UITableViewCell to show load more message when user reaches end of list while scrolling.
 class JTLoadMoreEmployeeCell: UITableViewCell {
     
+    // MARK: - Outlets
     @IBOutlet private weak var indicator: UIActivityIndicatorView!
     @IBOutlet private weak var messageLabel: UILabel!
+    
+    // MARK: - Lifecycle methods
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -8,7 +8,13 @@
 
 import UIKit
 
+/// UIImageView helper methods
 extension UIImageView {
+    
+    /**
+        Download remote image from url.
+        - Parameter url: Url to be used to download image data
+     */
     func downloadImage(with url: String){
         if !url.isEmpty {
             let requestManager = RequestManagerImplementation(urlSession: URLSession.shared, responseParser: JTResponseParserImplementation())
@@ -28,6 +34,7 @@ extension UIImageView {
         }
     }
     
+    /// Make imae circular with black border of thickness 1 pixel.
     func circularBlackBorder(){
         self.layer.cornerRadius = self.frame.size.width/2
         self.layer.borderColor = UIColor.black.cgColor

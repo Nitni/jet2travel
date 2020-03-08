@@ -10,8 +10,11 @@ import Foundation
 
 class JTEmployeeDetailsPresenterImplementation: JTEmployeeDetailsPresenter {
     
+    // MARK: - Variables
     weak var view: JTEmployeeDetailsView?
     var employee: Employee?
+    
+    // MARK: - Public methods
     
     func viewDidLoad() {
         guard  let view = self.view,

@@ -10,19 +10,33 @@ import UIKit
 
 typealias DeletionBlock = (Employee) -> Void
 
+///
+/// Custom UITableViewCell class for emplyee list cell.
 class JTEmployeeListCell: UITableViewCell {
     
+    // MARK: - Outlets
     @IBOutlet private weak var employeeProfileImageView: UIImageView!
     @IBOutlet private weak var employeeNameLabel: UILabel!
+    
+    // MARK: - Variables
     private var employee: Employee?
     var deletionBlock: DeletionBlock?
+    
+    // MARK: - Lifecycle methods
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.employeeProfileImageView.circularBlackBorder()
     }
-
+    
+    // MARK: - Public methods
+    
+    /**
+        Method to setup and load UI details for cell.
+     
+        - Parameter employee: Employee data model containing employee details to display.
+     */
     func setupUI(with employee: Employee){
         self.employee = employee
         var nameAge = ""
@@ -41,6 +55,8 @@ class JTEmployeeListCell: UITableViewCell {
             self.employeeProfileImageView.image = UIImage(named: Constants.Image.UserPlaceholder)
         }
     }
+    
+    // MARK: - Private methods
     
     @IBAction private func delete(){
         if let deletionBlock = self.deletionBlock, let employee = self.employee {
